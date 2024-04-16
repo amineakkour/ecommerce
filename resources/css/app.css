@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.label{
+  @apply text-xs text-gray-500 block mb-1
+}
+
+.input{
+  @apply text-sm outline-none p-2 w-full bg-gray-50 tracking-wider
+}
+
+.field{
+  @apply w-full my-1
+}
+
+.blue-btn{
+  @apply bg-blue-400 px-1 py-2 text-sm rounded-sm hover:bg-blue-500
+}
+
+.error{
+  @apply text-xs text-red-700 my-1
+}
+
+.success-alert{
+  @apply bg-green-100 text-green-900 text-xs p-1 py-2 rounded my-2
+}
