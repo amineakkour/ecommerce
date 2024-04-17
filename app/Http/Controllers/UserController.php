@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\Register;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -21,17 +21,17 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view("user.create");
+        return view("user.register");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateUserRequest $request, User $user)
+    public function store(Register $request, User $user)
     {
         $data = $request->validated();
         $user->create($data);
-        return redirect()->route("user.create")->with("success", "Account created succussfully!");
+        return redirect()->route("login")->with("success", "Account created succussfully!");
     }
 
     /**
@@ -64,5 +64,9 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    public function login(){
+        return view("user.login");
     }
 }

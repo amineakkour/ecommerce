@@ -8,3 +8,6 @@ Route::get('/', function () {
 });
 
 Route::resource("user", UserController::class);
+
+Route::get("/register", [UserController::class, "create"])->name("register");
+Route::get("/login", [UserController::class, "login"])->name("login");
